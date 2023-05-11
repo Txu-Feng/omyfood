@@ -1,0 +1,29 @@
+footer {
+    width: 100%;
+    height: 186px;
+    background-color: $dark-grey;
+    div{
+        height: 100%;
+        margin-top: 22px;
+        margin-bottom: 22px;
+        margin-left: 25px;
+        .footer-title {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            color: #FFFFFF;
+        }
+        a {
+            display: block;
+            margin-bottom: 7px;
+            color: #FFFFFF;
+            i {
+                margin-right: 11px;
+            }
+            .fa-solid {
+                width: 11px;
+                height: 13px;
+            }
+        }
+    }
+}

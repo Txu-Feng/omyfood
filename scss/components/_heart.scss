@@ -1,0 +1,19 @@
+.heart{
+    display: block;
+    width: 22px;
+    height: 21px;
+    &__checkbox {
+       display: none;
+    }
+    &__full {
+        position: absolute;
+        opacity: 0;
+        transition: all 500ms;
+    }
+    &__checkbox:checked ~ &__full {
+        opacity: 1;
+    }
+    &__empty {
+        position: absolute;
+    }
+}
