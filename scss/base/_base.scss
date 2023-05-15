@@ -26,7 +26,24 @@ h1 ,h2, h3 {
     font-weight: 400;
 }
 
-@media (min-width: 1024px) {
+.element-loading , .location-container, .catchphrase, .fonctionnement, .restaurants {
+    opacity: 0;
+    animation: visible-loading 1s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes visible-loading {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@media (min-width: 768px) {
     body {
         background-color: $light-grey;
     }

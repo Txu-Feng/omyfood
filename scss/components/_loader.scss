@@ -1,0 +1,42 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $lighter-grey;
+    animation: hidden-loading 3s forwards;
+}
+
+.loader::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border: 20px solid $green;
+    border-top-color: $purple;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes hidden-loading {
+    from {
+        visibility: visible;
+        //opacity: 1;
+    }
+    to {
+        visibility: hidden;
+        //opacity: 0;
+    }
+}

@@ -54,12 +54,12 @@ footer {
             a {
                 margin: 0;
                 display: inline-block;
-                margin-right: 30px;
+                margin-right: 20px;
             }
 
            .footer-title {
                 margin: 0;
-                margin-right: 30px;
+                margin-right: 20px;
                 margin-bottom: 30px;
             }
         }
@@ -69,6 +69,42 @@ footer {
     .footer-link {
         display: inline-block;
         width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    footer {
+        display: flex;
+        height: 114px;
+
+        .footer-container {
+
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: end;
+
+            .footer-link-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                margin-bottom: 30px;
+            }
+
+            a {
+                margin: 0;
+                display: inline-block;
+                margin-right: 20px;
+            }
+
+           .footer-title {
+                margin: 0;
+                margin-right: 20px;
+                margin-bottom: 30px;
+            }
+        }
+        
     }
 }
 

@@ -157,6 +157,61 @@
 
 // Media queries
 
+
+
+
+@media (min-width: 768px) {
+
+    .restaurants {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        padding-bottom: 0px;
+
+        &__title {
+            display: block;
+            width: 100%;
+        }
+    
+        &__row {
+            width: 100%;
+    
+            &__card {
+                width: 100%;
+                margin: 0;
+                margin-bottom: 30px;
+
+                &__heart {
+                    right: auto ;
+                    margin-left: 440px;
+                }
+
+                &__link {
+
+                    &__img {
+                        object-fit: cover;
+                    }
+                }
+            }
+
+           
+        }
+    }
+
+    .fonctionnement {  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__container {
+            width: 500px;
+        }
+    }
+
+}
+
+
 @media (min-width: 1024px) {
 
     .catchphrase {
@@ -171,6 +226,7 @@
         
         background-color: white;
         display: flex;
+        flex-direction: row;
         justify-content: center; 
 
         &__container {
@@ -239,6 +295,5 @@
            
         }
     }
-
     
 }
