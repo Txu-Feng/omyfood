@@ -1,9 +1,8 @@
-@charset "UTF-8";
 p, a, li, button, h2, h3, .catchphrase__title {
   font-family: Roboto, sans-serif;
 }
 
-.container__header__title, .footer-title {
+.main-container__header__title, .footer-title {
   font-family: Shrikhand;
 }
 
@@ -35,20 +34,6 @@ h1, h2, h3 {
   font-weight: 400;
 }
 
-.element-loading, .location-container, .catchphrase, .fonctionnement, .restaurants {
-  opacity: 0;
-  animation: visible-loading 1s forwards;
-  animation-delay: 2s;
-}
-
-@keyframes visible-loading {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @media (min-width: 768px) {
   body {
     background-color: #F3F3F3;
@@ -94,12 +79,16 @@ button:hover {
   position: absolute;
   opacity: 0;
   transition: all 500ms;
+  width: 22px;
+  height: 21px;
 }
 .heart__checkbox:checked ~ .heart__full {
   opacity: 1;
 }
 .heart__empty {
   position: absolute;
+  width: 22px;
+  height: 21px;
 }
 
 header {
@@ -153,14 +142,12 @@ header div img {
   animation: loading 0.75s ease infinite;
 }
 
-@keyframes loading {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
+.element-loading {
+  opacity: 0;
+  animation: visible-loading 1s forwards;
+  animation-delay: 2s;
 }
+
 @keyframes hidden-loading {
   from {
     visibility: visible;
@@ -169,6 +156,25 @@ header div img {
     visibility: hidden;
   }
 }
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes visible-loading {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*#################### MOBILE FIRST CODE ####################*/
+/*********** Small devices (mobile, less than 768px) ***********/
+/* location */
 .location-container {
   background-color: #EAEAEA;
   width: 110%;
@@ -182,6 +188,7 @@ header div img {
   margin-right: 17px;
 }
 
+/* catchphrase */
 .catchphrase {
   padding-top: 39.5px;
   background-color: #F3F3F3;
@@ -211,40 +218,38 @@ header div img {
   width: 218px;
 }
 
-.fonctionnement {
+/* help */
+.help {
   width: 100%;
-  /* on initialise et nomme un compteur */
 }
-.fonctionnement__container__title {
+.help__container__title {
   font-weight: 700;
   font-size: 24px;
   margin-top: 48px;
   margin-left: 20px;
 }
-.fonctionnement ol {
+.help ol {
   counter-reset: repas;
   margin: 26px 20px 43px 20px;
   padding-inline-start: 10px;
 }
-.fonctionnement li {
+.help li {
   position: relative;
   list-style-type: none;
-  counter-increment: repas; /* on incrémente le compteur à chaque nouveau li */
+  counter-increment: repas;
   margin-bottom: 25px;
   background-color: #F7F7F7;
   padding: 30px 0px 30px 0px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
-  font-weight: 500;
-  font-size: 16px;
 }
-.fonctionnement li i {
+.help li i {
   margin-right: 25px;
 }
-.fonctionnement li:before {
+.help li:before {
   position: relative;
   right: 15px;
-  content: counter(repas); /* on affiche le compteur */
+  content: counter(repas);
   padding: 5px 10px 5px 10px;
   margin-right: 8px;
   vertical-align: top;
@@ -255,6 +260,7 @@ header div img {
   color: white;
 }
 
+/* restaurants */
 .restaurants {
   background-color: #F3F3F3;
   width: 100%;
@@ -271,6 +277,27 @@ header div img {
   background-color: white;
   margin: 0px 18px 18px 18px;
   height: 251px;
+}
+.restaurants__row__card__new {
+  background-color: #99E2D0;
+  position: absolute;
+  z-index: 2;
+  margin-left: 250px;
+  margin-top: 10px;
+  width: 80px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+.restaurants__row__card__new__p {
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+  color: #008766;
 }
 .restaurants__row__card__heart {
   position: absolute;
@@ -319,7 +346,20 @@ header div img {
   font-size: 17px;
 }
 
+/*#################### MEDIA QUERIES ####################*/
+/*********** Medium devices (tablets, more/equal than 1024px) ***********/
 @media (min-width: 768px) {
+  /* help */
+  .help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+  }
+  .help__container {
+    width: 500px;
+  }
+  /* restaurants */
   .restaurants {
     display: flex;
     flex-direction: column;
@@ -339,6 +379,9 @@ header div img {
     margin: 0;
     margin-bottom: 30px;
   }
+  .restaurants__row__card__new {
+    margin-left: 405px;
+  }
   .restaurants__row__card__heart {
     right: auto;
     margin-left: 440px;
@@ -346,102 +389,88 @@ header div img {
   .restaurants__row__card__link__img {
     object-fit: cover;
   }
-  .fonctionnement {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .fonctionnement__container {
-    width: 500px;
-  }
 }
+/*********** Big devices (PC, more than 1024px) ***********/
 @media (min-width: 1024px) {
+  /* catchphrase */
   .catchphrase form button {
     margin-bottom: 30px;
   }
-  .fonctionnement {
-    background-color: white;
+  /* help */
+  .help {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  .fonctionnement__container {
+  .help__container {
     width: 100%;
     max-width: 1100px;
   }
-  .fonctionnement__container__title {
+  .help__container__title {
     margin-left: 0;
   }
-  .fonctionnement ol {
+  .help ol {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
     margin-top: 25px;
   }
-  .fonctionnement li {
+  .help li {
     width: 322px;
   }
+  /* restaurant */
   .restaurants {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 1100px;
-    padding-bottom: 0px;
   }
   .restaurants__title {
-    display: block;
-    width: 100%;
     margin-top: 30px;
   }
   .restaurants__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
     margin-bottom: 30px;
   }
   .restaurants__row__card {
     width: 500px;
-    margin: 0;
-  }
-  .restaurants__row__card__heart {
-    right: auto;
-    margin-left: 440px;
-  }
-  .restaurants__row__card__link__img {
-    object-fit: cover;
   }
 }
+/*#################### MOBILE FIRST CODE ####################*/
+/*********** Small devices (mobile, less than 768px) ***********/
 .main-image {
   width: 100%;
   height: 275px;
 }
 
-.container {
+/* main content ~ sub-header ~ heart ~ button */
+.main-container {
   background-color: #F7F7F7;
   width: 100%;
   border-radius: 40px 40px 0px 0px;
   position: relative;
   bottom: 40px;
 }
-.container__header {
+.main-container__header {
   margin: 32px 17px 2px 17px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.container__header__title {
+.main-container__header__title {
   font-weight: 400;
   font-size: 28px;
 }
-.container__header__heart {
+.main-container__header__heart {
   position: absolute;
   right: 0;
   margin-right: 40px;
   margin-top: 8px;
 }
-.container__form__button {
+.main-container__form__button {
   display: block;
   margin-top: 40px;
   width: 186px;
@@ -449,6 +478,7 @@ header div img {
   margin-right: auto;
 }
 
+/* main content ~ menu */
 .menu__container__title {
   margin-top: 0px;
   margin-left: 13px;
@@ -461,32 +491,23 @@ header div img {
   margin-left: 13px;
   width: 40px;
 }
+.menu__container__checkbox {
+  display: none;
+}
 .menu__container__card {
   background-color: white;
   margin: 0px 13px 0px 13px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   height: 0px;
-}
-.menu__container__card__label {
-  display: block;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
 }
-.menu__container__card__label__checkbox {
-  display: none;
-}
-.menu__container__card__label__checkbox:checked ~ .menu__container__card__label__check {
-  width: 60px;
-}
-.menu__container__card__label__checkbox:checked ~ .menu__container__card__label__check .menu__container__card__label__check__icon {
-  transform: translateX(0);
-}
-.menu__container__card__label__content {
+.menu__container__card__content {
+  position: relative;
+  z-index: 3;
   min-width: 0;
   display: flex;
   flex-direction: row;
@@ -494,14 +515,14 @@ header div img {
   height: 100%;
   width: 100%;
 }
-.menu__container__card__label__content__left {
+.menu__container__card__content__left {
   min-width: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.menu__container__card__label__content__left__name {
+.menu__container__card__content__left__name {
   width: 100%;
   display: block;
   text-overflow: ellipsis;
@@ -511,7 +532,7 @@ header div img {
   font-weight: 500;
   font-size: 18px;
 }
-.menu__container__card__label__content__left__description {
+.menu__container__card__content__left__description {
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -520,20 +541,20 @@ header div img {
   font-size: 15px;
   margin: 0px 0px 12px 15px;
 }
-.menu__container__card__label__content__right {
+.menu__container__card__content__right {
   width: 60px;
   height: 100%;
   display: flex;
   align-items: end;
   justify-content: end;
 }
-.menu__container__card__label__content__right__price {
+.menu__container__card__content__right__price {
   display: block;
   font-weight: 700;
   font-size: 15px;
   margin: 0px 15px 13px 0px;
 }
-.menu__container__card__label__check {
+.menu__container__card__check {
   position: relative;
   width: 59px;
   background-color: #99E2D0;
@@ -541,27 +562,35 @@ header div img {
   justify-content: center;
   align-items: center;
   border-radius: 0px 15px 15px 0px;
-  transition: all 700ms;
+  transition: all 500ms;
   width: 0px;
 }
-.menu__container__card__label__check__icon {
+.menu__container__card__check__icon {
   color: white;
-  transition: all 700ms;
+  transition: all 500ms;
   transform: translateX(60px);
 }
+.menu__container__card:hover .menu__container__card__check {
+  width: 60px;
+}
+.menu__container__card:hover .menu__container__card__check .menu__container__card__check__icon {
+  transform: translateX(0);
+}
 
+/*#################### MEDIA QUERIES ####################*/
+/*********** Medium devices (tablets, more/equal than 1024px) ***********/
 @media (min-width: 768px) {
   .main-image {
     height: 315px;
     object-fit: cover;
   }
-  .container {
+  .main-container {
     width: 1055px;
   }
-  .container__header {
+  .main-container__header {
     justify-content: center;
   }
-  .container__heart {
+  .main-container__heart {
     margin-right: 400px;
   }
   .menu {
@@ -573,18 +602,19 @@ header div img {
     width: 634px;
   }
 }
+/*********** Big devices (PC, more than 1024px) ***********/
 @media (min-width: 1024px) {
   .main-image {
     height: 350px;
     object-fit: cover;
   }
-  .container {
+  .main-container {
     width: 1055px;
   }
-  .container__header {
+  .main-container__header {
     justify-content: center;
   }
-  .container__heart {
+  .main-container__heart {
     margin-right: 400px;
   }
   .menu {
@@ -596,7 +626,8 @@ header div img {
     width: 634px;
   }
 }
-@keyframes menu-x {
+/*#################### MENU LOADING ####################*/
+@keyframes card-loading {
   0% {
     opacity: 0;
     height: 0px;
@@ -609,11 +640,11 @@ header div img {
   }
 }
 .menu__container__card {
-  animation: menu-x 800ms forwards;
+  animation: card-loading 800ms forwards;
   transform-origin: top;
 }
 
-@keyframes menu-title {
+@keyframes title-loading {
   0% {
     margin-top: 0px;
   }
@@ -622,7 +653,7 @@ header div img {
   }
 }
 .menu__container__title {
-  animation: menu-title 800ms forwards;
+  animation: title-loading 800ms forwards;
 }
 
 .menu:nth-child(2) h2 {
@@ -738,32 +769,8 @@ footer div a .fa-solid {
   }
 }
 @media (min-width: 1024px) {
-  footer {
-    display: flex;
-    height: 114px;
-  }
-  footer .footer-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: end;
-  }
-  footer .footer-container .footer-link-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    margin-bottom: 30px;
-  }
-  footer .footer-container a {
-    margin: 0;
-    display: inline-block;
-    margin-right: 20px;
-  }
-  footer .footer-container .footer-title {
-    margin: 0;
-    margin-right: 20px;
-    margin-bottom: 30px;
+  .footer-link {
+    margin-right: 80px;
   }
 }
 

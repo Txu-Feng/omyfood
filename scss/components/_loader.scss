@@ -21,6 +21,21 @@
     animation: loading 0.75s ease infinite;
 }
 
+.element-loading  {
+    opacity: 0;
+    animation: visible-loading 1s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes hidden-loading {
+    from {
+        visibility: visible;
+    }
+    to {
+        visibility: hidden;
+    }
+}
+
 @keyframes loading {
     from {
         transform: rotate(0turn);
@@ -30,13 +45,11 @@
     }
 }
 
-@keyframes hidden-loading {
+@keyframes visible-loading {
     from {
-        visibility: visible;
-        //opacity: 1;
+        opacity: 0;
     }
     to {
-        visibility: hidden;
-        //opacity: 0;
+        opacity: 1;
     }
 }

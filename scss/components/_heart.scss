@@ -1,7 +1,6 @@
 .heart{
     display: block;
-    width: 22px;
-    height: 21px;
+    @include heart-w-h;
     &__checkbox {
        display: none;
     }
@@ -9,11 +8,13 @@
         position: absolute;
         opacity: 0;
         transition: all 500ms;
+        @include heart-w-h;
     }
     &__checkbox:checked ~ &__full {
         opacity: 1;
     }
     &__empty {
         position: absolute;
+        @include heart-w-h;
     }
 }

@@ -16,7 +16,9 @@
 
 <body>
 
+
     <div class="loader  loader--hidden"></div>
+
 
     <header class="element-loading">
             <div class="header-container">
@@ -24,22 +26,25 @@
             </div>
     </header>
         
-    <div class="location-container">
+
+    <div class="location-container element-loading">
         <i class="fa-solid fa-location-dot"></i>
         <p class="location text-bold">Paris, Belleville</p>
     </div>
+
         
-    <div class="catchphrase">
+    <div class="catchphrase element-loading">
         <h1 class="catchphrase__title">Réservez le menu qui vous convient</h1>
         <p class="catchphrase__subtitle">Découvrez des restaurants d’exception, sélectionnés par nos soins.</p>
         <form action="#restaurants">
             <button class="text-bold">Explorer nos restaurants</button>
         </form>
     </div>
+
         
-    <section class="fonctionnement">
-        <div class="fonctionnement__container">
-            <h2 class="fonctionnement__container__title">Fonctionnement</h2>
+    <section class="help element-loading">
+        <div class="help__container">
+            <h2 class="help__container__title">Fonctionnement</h2>
             <ol>
                 <li class="text-bold"><span class="grey-icon"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>Choisissez un restaurant</li>
                 <li class="text-bold"><span class="grey-icon"><i class="fa-solid fa-list-ul fa-lg"></i></span>Composez votre menu</li>
@@ -47,21 +52,25 @@
             </ol>
         </div>
     </section>
+    
         
-    <section class="restaurants" id="restaurants">
+    <section class="restaurants element-loading" id="restaurants">
         
         <h2 class="restaurants__title">Restaurants</h2>
 
         <div class="restaurants__row">
             <article class="restaurants__row__card">
+                <div class="restaurants__row__card__new">
+                    <p class="restaurants__row__card__new__p">Nouveau</p>
+                </div>
                 <label class="restaurants__row__card__heart heart">
                     <input class="heart__checkbox" type="checkbox">
-                    <img class="heart__empty" src="./images/heart/empty-heart.png" width="22px" height="21px" alt="">
-                    <img class="heart__full" src="./images/heart/full-heart.png" width="22px" height="21px" alt="">
+                    <img class="heart__empty" src="./images/heart/empty-heart.png" alt="image d'un coeur vide">
+                    <img class="heart__full" src="./images/heart/full-heart.png" alt="image d'un coeur rempli">
                 </label>
                 <a href="/la-palette-du-gout.html" class="restaurants__row__card__link">
                     <img class="restaurants__row__card__link__img" src="/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                        alt="Image du restaurant la palette du goût" width="300px" height="100px">
+                        alt="Image du restaurant la palette du goût">
                     <div class="restaurants__row__card__link__content">
                         <div class="restaurants__row__card__link__content__text">
                             <h3 class="restaurants__row__card__link__content__text__title">La palette du goût</h3>
@@ -71,14 +80,17 @@
                 </a>
             </article>
             <article class="restaurants__row__card">
+                <div class="restaurants__row__card__new">
+                    <p class="restaurants__row__card__new__p">Nouveau</p>
+                </div>
                 <label class="restaurants__row__card__heart heart">
                     <input class="heart__checkbox" type="checkbox">
-                    <img class="heart__empty" src="./images/heart/empty-heart.png" width="22px" height="21px" alt="">
-                    <img class="heart__full" src="./images/heart/full-heart.png" width="22px" height="21px" alt="">
+                    <img class="heart__empty" src="./images/heart/empty-heart.png" alt="image d'un coeur vide">
+                    <img class="heart__full" src="./images/heart/full-heart.png" alt="image d'un coeur rempli">
                 </label>
                 <a href="/la-note-enchantee.html" class="restaurants__row__card__link">
                     <img class="restaurants__row__card__link__img" src="/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
-                        alt="Image du restaurant la note enchantée" width="300px" height="100px">
+                        alt="Image du restaurant la note enchantée">
                     <div class="restaurants__row__card__link__content">
                         <div class="restaurants__row__card__link__content__text">
                             <h3 class="restaurants__row__card__link__content__text__title">La note enchantée</h3>
@@ -93,12 +105,12 @@
             <article class="restaurants__row__card">
                 <label class="restaurants__row__card__heart heart">
                     <input class="heart__checkbox" type="checkbox">
-                    <img class="heart__empty" src="./images/heart/empty-heart.png" width="22px" height="21px" alt="">
-                    <img class="heart__full" src="./images/heart/full-heart.png" width="22px" height="21px" alt="">
+                    <img class="heart__empty" src="./images/heart/empty-heart.png" alt="image d'un coeur vide">
+                    <img class="heart__full" src="./images/heart/full-heart.png" alt="image d'un coeur rempli">
                 </label>
                 <a href="/a-la-francaise.html" class="restaurants__row__card__link">
                     <img class="restaurants__row__card__link__img" src="/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
-                        alt="Image du restaurant à la française" width="300px" height="100px">
+                        alt="Image du restaurant à la française">
                     <div class="restaurants__row__card__link__content">
                         <div class="restaurants__row__card__link__content__text">
                             <h3 class="restaurants__row__card__link__content__text__title">À la française</h3>
@@ -110,12 +122,12 @@
             <article class="restaurants__row__card">
                 <label class="restaurants__row__card__heart heart">
                     <input class="heart__checkbox" type="checkbox">
-                    <img class="heart__empty" src="./images/heart/empty-heart.png" width="22px" height="21px" alt="">
-                    <img class="heart__full" src="./images/heart/full-heart.png" width="22px" height="21px" alt="">
+                    <img class="heart__empty" src="./images/heart/empty-heart.png" alt="image d'un coeur vide">
+                    <img class="heart__full" src="./images/heart/full-heart.png" alt="image d'un coeur rempli">
                 </label>
-                <a href="/a-la-francaise.html" class="restaurants__row__card__link">
+                <a href="/le-delice-des-sens.html" class="restaurants__row__card__link">
                     <img class="restaurants__row__card__link__img" src="/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
-                        alt="Image du restaurant le délice des sens" width="300px" height="100px">
+                        alt="Image du restaurant le délice des sens">
                     <div class="restaurants__row__card__link__content">
                         <div class="restaurants__row__card__link__content__text">
                             <h3 class="restaurants__row__card__link__content__text__title">Le délice des sens</h3>

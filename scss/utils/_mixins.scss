@@ -1,0 +1,14 @@
+@mixin heart-w-h {
+    width: 22px;
+    height: 21px;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
