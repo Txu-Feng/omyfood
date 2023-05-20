@@ -116,7 +116,8 @@
                 background-color: $light-turquoise;
                 position: absolute;
                 z-index: 2;
-                margin-left: 250px;
+                right: 0;
+                margin-right: 35px;
                 margin-top: 10px;
                 width: 80px;
                 height: 29px;
@@ -191,7 +192,7 @@
 
 /*********** Medium devices (tablets, more/equal than 1024px) ***********/
 
-@media (min-width: 768px) {
+@media (min-width: 768px) {  //768px
 
     /* help */
 
@@ -223,6 +224,8 @@
                 margin-bottom: 30px;
                 &__new {
                     margin-left: 405px;
+                    margin-right: 0;
+                    right: auto;
                 }
                 &__heart {
                     right: auto ;
