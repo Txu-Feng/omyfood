@@ -47,7 +47,7 @@
     &__container {
 
         &__title {
-            margin-top: 0px;
+            margin-top: 40px;
             margin-left: 13px;
             font-weight: 300;
             font-size: 16px;
@@ -67,10 +67,10 @@
         // beginning of __card
         &__card {
             background-color: white;
-            margin: 0px 13px 0px 13px;
+            margin: 12px 13px 0px 13px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
-            height: 0px;
+            height: 69px;
             @include flex-row;                
             justify-content: space-between;
             overflow: hidden;
@@ -135,7 +135,6 @@
 
                 &__check {
                     position: relative;
-                    width: 59px;
                     background-color: $green;
                     display: flex;
                     justify-content: center;
@@ -182,10 +181,10 @@
         width: 1055px;
         &__header {
             justify-content: center;
+            &__heart {
+                margin-right: 350px;
+            }
         }
-        &__heart {
-            margin-right: 400px;
-        }   
     }
 
     .menu {
@@ -214,11 +213,11 @@
 
         &__header {
             justify-content: center;
+            &__heart {
+                margin-right: 70px;
+            }  
         }
-
-        &__heart {
-            margin-right: 400px;
-        }   
+ 
     }
 
     .menu {
@@ -235,87 +234,26 @@
 
 /*#################### MENU LOADING ####################*/
 
-@keyframes card-loading {
+@keyframes menu-loading {
     0% {
-        opacity: 0;
-        height: 0px;
-        margin-top: 0px;
+        transform: scaleY(0);
     }
 
     100% {
-        opacity: 1;
-        height: 69px;
-        margin-top: 12px;
+        transform: scaleY(1);
     }
 }
 
-.menu__container__card {
-    animation: card-loading 800ms forwards;
-    transform-origin: top;
+.menu__container {
+    transform: scaleY(0);
+    animation: menu-loading 1s forwards;
+    transform-origin: 0% top;
 }
 
-@keyframes title-loading {
-    0% {
-        margin-top: 0px;
-    }
-
-    100% {
-        margin-top: 40px;
-    }
+.menu:nth-child(3) .menu__container {
+    animation-delay: 600ms;
+}
+.menu:nth-child(4) .menu__container {
+    animation-delay: 1200ms;
 }
 
-.menu__container__title {
-    animation: title-loading 800ms forwards;
-}
-
-.menu:nth-child(2) {
-    h2 {
-        animation-delay: 1000ms; 
-    }
-    article:nth-child(3) {
-        animation-delay: 1000ms;
-    }
-    article:nth-child(4) {
-        animation-delay: 1250ms;
-    }
-    article:nth-child(5) {
-        animation-delay: 1500ms;
-    }
-    article:nth-child(6) {
-        animation-delay: 1750ms;
-    }
-}
-.menu:nth-child(3) {
-    h2 {
-        animation-delay: 2000ms; 
-    }
-    article:nth-child(3) {
-        animation-delay: 2000ms;
-    }
-    article:nth-child(4) {
-        animation-delay: 2250ms;
-    }
-    article:nth-child(5) {
-        animation-delay: 2500ms;
-    }
-    article:nth-child(6) {
-        animation-delay: 2750ms;
-    }
-}
-.menu:nth-child(4) {
-    h2 {
-        animation-delay: 3000ms; 
-    }
-    article:nth-child(3) {
-        animation-delay: 3000ms;
-    }
-    article:nth-child(4) {
-        animation-delay: 3250ms;
-    }
-    article:nth-child(5) {
-        animation-delay: 3500ms;
-    }
-    article:nth-child(6) {
-        animation-delay: 3750ms;
-    }
-}

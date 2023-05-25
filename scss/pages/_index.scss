@@ -5,7 +5,7 @@
 
 .location-container {
     background-color: $location-grey;
-    width: 110%;
+    width: 100%;
     @include flex-row;
     align-items: center;
     justify-content: center;
