@@ -154,6 +154,7 @@
 
         // __card hover animation
         &__card:hover {
+            cursor: pointer;
             .menu__container__card__check {
                 width: 60px;
             .menu__container__card__check__icon {

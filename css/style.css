@@ -39,11 +39,11 @@ h1, h2, h3 {
     background-color: white;
   }
 }
-.grey-icon {
+.help-icon {
   color: #7E7E7E;
 }
 
-.purple-icon {
+.help__container ol li:hover .help-icon {
   color: #9356DC;
 }
 
@@ -570,6 +570,9 @@ header div img {
   color: white;
   transition: all 500ms;
   transform: translateX(60px);
+}
+.menu__container__card:hover {
+  cursor: pointer;
 }
 .menu__container__card:hover .menu__container__card__check {
   width: 60px;

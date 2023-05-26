@@ -1,6 +1,9 @@
-.grey-icon {
+.help-icon {
     color: $icon-grey;
 }
-.purple-icon {
-    color: $purple;
+
+.help__container ol li:hover {
+    .help-icon {
+        color: $purple;
+    }
 }
